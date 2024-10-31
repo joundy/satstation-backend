@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./schema-dist/"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./launchpad.db"
+}
+
+model Rune {
+  id String @id @default(uuid())
+
+  commitAddress      String
+  runeBitcoinAddress String
+  feeRate            Int
+  minFundValue       Int
+  commitBufferHex    String
+  runeBufferHex      String
+  holderAddress      String
+  isCommited         Boolean @default(false)
+
+  transactionHash String?
+  isConfirmed     Boolean @default(false)
+  isValid         Boolean @default(false)
+
+  tapInternalKeyHex     String
+  userTapInternalKeyHex String
+  dataHex               String?
+  dataMimeType          String?
+  runeName              String?
+  pricePerRune          String?
+  maxSupply             String?
+  nearCreatorAddress    String?
+
+  outpoint String?
+
+  createdAt     DateTime @default(now())
+  lastCheckedAt DateTime @default(now())
+
+  @@map("runes")
+}
+
+model Withdraw {
+  id String @id @default(uuid())
+
+  nearAccountAddress String
+
+  isWithdrawn Boolean @default(false)
+
+  transactionHash String?
+  isConfirmed     Boolean @default(false)
+
+  createdAt     DateTime @default(now())
+  lastCheckedAt DateTime @default(now())
+
+  @@map("withdraws")
+}

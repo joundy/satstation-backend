@@ -1,0 +1,30 @@
+{
+  "name": "satstation-backend",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "@satstation-backend/eslint-config": "*",
+    "@satstation-backend/typescript-config": "*",
+    "@types/jest": "^29.5.13",
+    "axios": "^1.7.7",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "turbo": "^1.13.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {}
+}

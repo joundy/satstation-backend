@@ -1,0 +1,48 @@
+{
+  "name": "@satstation-backend/backend",
+  "version": "0.0.1",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b ./tsconfig.build.json",
+    "start": "node ./dist/index.js",
+    "clean": "rm -rf dist",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "prisma:generate": "npx prisma generate",
+    "prisma:migration:create": "npx prisma migrate dev --create-only && npx prisma generate",
+    "prisma:migration:up": "npx prisma migrate deploy",
+    "prisma:migration:status": "npx prisma migrate status"
+  },
+  "devDependencies": {
+    "@satstation-backend/eslint-config": "*",
+    "@satstation-backend/typescript-config": "*",
+    "@types/elliptic": "^6.4.18"
+  },
+  "dependencies": {
+    "@magiceden-oss/runestone-lib": "^1.0.2",
+    "@near-js/types": "^0.3.1",
+    "@satstation-backend/sdk": "*",
+    "@noble/curves": "^1.6.0",
+    "@prisma/client": "5.20.0",
+    "@types/bitcoinjs-lib": "^5.0.0",
+    "@types/express": "^5.0.0",
+    "bitcoinjs-lib": "^7.0.0-rc.0",
+    "bn.js": "^5.2.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "elliptic": "^6.5.7",
+    "ethers": "^6.13.4",
+    "express": "^4.21.0",
+    "js-sha3": "^0.9.3",
+    "near-api-js": "^5.0.1",
+    "prisma": "^5.20.0",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0",
+    "viem": "^2.21.21",
+    "zod": "^3.23.8"
+  }
+}

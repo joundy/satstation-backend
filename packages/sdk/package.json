@@ -1,0 +1,26 @@
+{
+  "name": "@satstation-backend/sdk",
+  "version": "0.0.4",
+  "private": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b ./tsconfig.build.json",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@bitcoinerlab/secp256k1": "^1.1.1",
+    "@types/cors": "^2.8.17",
+    "bip32": "^4.0.0",
+    "bip39": "^3.1.0",
+    "bitcoin-address-validation": "^2.2.3",
+    "bitcoinjs-lib": "^6.1.5",
+    "cors": "^2.8.5",
+    "cross-fetch": "^4.0.0",
+    "ecpair": "^2.1.0"
+  },
+  "devDependencies": {
+    "@satstation-backend/eslint-config": "*",
+    "@satstation-backend/typescript-config": "*"
+  }
+}

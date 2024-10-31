@@ -1,0 +1,3 @@
+{
+  "extends": "@satstation-backend/typescript-config/base.json"
+}
